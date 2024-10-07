@@ -3,11 +3,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SportsTracker {
-    static class Activity {
+    public static class Activity {
         String name;
         int duration; // in minutes
 
-        Activity(String name, int duration) {
+        public Activity(String name, int duration) {
             this.name = name;
             this.duration = duration;
         }
@@ -18,7 +18,7 @@ public class SportsTracker {
         }
     }
 
-    private static List<Activity> activities = new ArrayList<>();
+    public static List<Activity> activities = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -50,7 +50,7 @@ public class SportsTracker {
         }
     }
 
-    private static void logActivity(Scanner scanner) {
+    public static void logActivity(Scanner scanner) {
         System.out.print("Enter activity name: ");
         String name = scanner.nextLine();
         System.out.print("Enter duration in minutes: ");
@@ -60,7 +60,7 @@ public class SportsTracker {
         System.out.println("Activity logged successfully.");
     }
 
-    private static void viewActivities() {
+    public static void viewActivities() {
         if (activities.isEmpty()) {
             System.out.println("No activities logged.");
         } else {
@@ -71,7 +71,7 @@ public class SportsTracker {
         }
     }
 
-    private static void calculateTotalTime() {
+    public static void calculateTotalTime() {
         int totalTime = 0;
         for (Activity activity : activities) {
             totalTime += activity.duration;
